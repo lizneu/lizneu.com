@@ -1,0 +1,83 @@
+@import "http://fonts.googleapis.com/css?family=Oswald:400,700";
+body {
+  font-family: "Oswald", sans-serif;
+  font-size: 400px;
+  font-weight: bold;
+  text-align: center;
+  background-image: url("../images/background.png");
+  color: #222; }
+
+#container {
+  width: 1000px;
+  height: 600px;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  margin-left: -150px; }
+
+#firstname {
+  width: 40%;
+  float: left;
+  text-align: right; }
+  #firstname > span {
+    float: left;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
+  #firstname .char1 {
+    width: 34%; }
+  #firstname > span:hover {
+    transform: translate(0, -50px);
+    -ms-transform: translate(0, -50px);
+    /* IE 9 */
+    -webkit-transform: translate(0, -50px);
+    /* Safari and Chrome */ }
+  #firstname .char1:hover {
+    transform: rotate(30deg);
+    transform-origin: 70% 30%;
+    -ms-transform: rotate(30deg);
+    /* IE 9 */
+    -ms-transform-origin: 70% 30%;
+    /* IE 9 */
+    -webkit-transform: rotate(30deg);
+    /* Safari and Chrome */
+    -webkit-transform-origin: 70% 30%;
+    /* Safari and Chrome */ }
+  #firstname .char2:hover {
+    transform: scale(1, 0.75) translate(0, 60px);
+    -ms-transform: scale(1, 0.75) translate(0, 60px);
+    /* IE 9 */
+    -webkit-transform: scale(1, 0.75) translate(0, 60px);
+    /* Safari and Chrome */ }
+
+#lastname {
+  width: 60%;
+  float: left;
+  text-align: left; }
+  #lastname > div {
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+  #lastname > div:first-child {
+    opacity: 1.0;
+    width: 100%; }
+  #lastname > div:last-child {
+    color: magenta;
+    height: 0px;
+    opacity: 0;
+    float: left; }
+    #lastname > div:last-child > div:first-child {
+      position: absolute;
+      top: 10%;
+      left: 44%;
+      font-size: 85px; }
+    #lastname > div:last-child > div:last-child {
+      position: absolute;
+      top: 0%; }
+  #lastname:hover > div:first-child {
+    opacity: 0; }
+  #lastname:hover > div:last-child {
+    opacity: 1.0;
+    height: 600px; }

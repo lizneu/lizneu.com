@@ -1,0 +1,117 @@
+@import "http://fonts.googleapis.com/css?family=Oswald:400,700";
+$font-family: 'Oswald', sans-serif;
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin translate($x, $y) {
+  transform: translate($x,$y);
+  -ms-transform: translate($x,$y); /* IE 9 */
+  -webkit-transform: translate($x,$y); /* Safari and Chrome */
+}
+
+@mixin rotate($deg, $origin) {
+  transform: rotate($deg);
+  transform-origin: $origin;
+  -ms-transform: rotate($deg); /* IE 9 */
+  -ms-transform-origin: $origin; /* IE 9 */
+  -webkit-transform: rotate($deg); /* Safari and Chrome */
+  -webkit-transform-origin: $origin; /* Safari and Chrome */
+}
+
+@mixin scale($width, $height, $x, $y) {
+  transform: scale($width, $height) translate($x, $y);
+  -ms-transform: scale($width,$height) translate($x, $y); /* IE 9 */
+  -webkit-transform: scale($width,$height) translate($x, $y); /* Safari and Chrome */
+}
+
+body {
+  font-family: $font-family;
+  font-size: 400px;
+  font-weight: bold;
+  text-align: center;
+  background-image: url('../images/background.png');
+  color: #222;
+}
+
+#container {
+  width: 1000px;
+  height: 600px;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  margin-left: -150px;
+}
+
+#firstname {
+  width: 40%;
+  float: left;
+  text-align: right;
+  >span {
+    float: left;
+    @include transition(all 0.4s);
+  }
+  .char1 {
+    width: 34%;
+  }
+  >span:hover {
+    @include translate(0, -50px);
+  }
+  .char1:hover {
+    @include rotate(30deg, 70% 30%);
+  }
+  .char2:hover {
+    @include scale(1, 0.75, 0, 60px);
+  }
+}
+
+#lastname {
+  width: 60%;
+  float: left;
+  text-align: left;
+
+  >div {
+    @include transition(opacity 0.3s);
+  }
+
+  >div:first-child {
+    opacity: 1.0;
+    width: 100%;
+  }
+
+  >div:last-child {
+    color:magenta;
+    height: 0px;
+    opacity: 0;
+    float: left;
+
+    >div:first-child {
+      position: absolute;
+      top:10%;
+      left:44%;
+      font-size:85px;
+    }
+    >div:last-child {
+      position:absolute;
+      top:0%;
+    }
+  }
+
+  &:hover {
+    >div:first-child {
+      opacity: 0;
+    }
+    >div:last-child {
+      opacity: 1.0;
+      height: 600px;
+
+    }
+  }
+}
+
+
+
