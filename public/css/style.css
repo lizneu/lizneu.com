@@ -1,4 +1,5 @@
 @import "http://fonts.googleapis.com/css?family=Oswald:400,700";
+@import "http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two";
 body {
   font-family: "Oswald", sans-serif;
   font-size: 400px;
@@ -18,22 +19,62 @@ body {
 #firstname {
   width: 40%;
   float: left;
-  text-align: right; }
-  #firstname > span {
-    float: left;
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    transition: all 0.4s; }
-  #firstname .char1 {
-    width: 34%; }
-  #firstname > span:hover {
-    transform: translate(0, -50px);
-    -ms-transform: translate(0, -50px);
+  text-align: right;
+  position: relative; }
+  #firstname #iChar.surprise {
+    position: relative; }
+  #firstname .char {
+    float: right;
+    text-align: right; }
+    #firstname .char > span {
+      float: left;
+      -webkit-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s; }
+    #firstname .char .char1 {
+      width: 34%; }
+    #firstname .char .link1, #firstname .char .link2, #firstname .char .link3 {
+      font-family: "Shadows Into Light Two", cursive;
+      font-size: 36px;
+      position: absolute; }
+    #firstname .char .link1 {
+      top: 65%;
+      left: 8%;
+      transform: rotate(90deg);
+      transform-origin: 50% 50% 0;
+      -ms-transform: rotate(90deg);
+      /* IE 9 */
+      -ms-transform-origin: 50% 50% 0;
+      /* IE 9 */
+      -webkit-transform: rotate(90deg);
+      /* Safari and Chrome */
+      -webkit-transform-origin: 50% 50% 0;
+      /* Safari and Chrome */ }
+    #firstname .char .link2 {
+      top: 25%;
+      left: 42%; }
+    #firstname .char .link3 {
+      top: 71.5%;
+      left: 65%; }
+    #firstname .char .char2.hidden, #firstname .char .link2.hidden {
+      visibility: hidden;
+      -webkit-transition: none;
+      -moz-transition: none;
+      -o-transition: none;
+      transition: none; }
+  #firstname .char:hover .link1, #firstname .char:hover .link2, #firstname .char:hover .link3 {
+    z-index: 1000; }
+  #firstname .char:hover .link1:hover, #firstname .char:hover .link2:hover, #firstname .char:hover .link3:hover {
+    color: #ff088d;
+    cursor: pointer; }
+  #firstname .char:hover > span {
+    transform: translate(0, -53px);
+    -ms-transform: translate(0, -53px);
     /* IE 9 */
-    -webkit-transform: translate(0, -50px);
+    -webkit-transform: translate(0, -53px);
     /* Safari and Chrome */ }
-  #firstname .char1:hover {
+  #firstname .char:hover .char1 {
     transform: rotate(30deg);
     transform-origin: 70% 30%;
     -ms-transform: rotate(30deg);
@@ -44,7 +85,7 @@ body {
     /* Safari and Chrome */
     -webkit-transform-origin: 70% 30%;
     /* Safari and Chrome */ }
-  #firstname .char2:hover {
+  #firstname .char:hover .char2 {
     transform: scale(1, 0.75) translate(0, 60px);
     -ms-transform: scale(1, 0.75) translate(0, 60px);
     /* IE 9 */
@@ -62,9 +103,10 @@ body {
     transition: opacity 0.3s; }
   #lastname > div:first-child {
     opacity: 1.0;
-    width: 100%; }
+    width: 100%;
+    height: 600px; }
   #lastname > div:last-child {
-    color: magenta;
+    color: #ff088d;
     height: 0px;
     opacity: 0;
     float: left; }
@@ -77,7 +119,92 @@ body {
       position: absolute;
       top: 0%; }
   #lastname:hover > div:first-child {
-    opacity: 0; }
+    opacity: 0;
+    height: 0px; }
   #lastname:hover > div:last-child {
     opacity: 1.0;
     height: 600px; }
+
+#content-wrapper {
+  position: relative;
+  height: 600px;
+  width: 600px;
+  top: 75px;
+  left: 600px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+
+#content-wrapper.off-screen {
+  transform: translate(0, 1000px);
+  -ms-transform: translate(0, 1000px);
+  /* IE 9 */
+  -webkit-transform: translate(0, 1000px);
+  /* Safari and Chrome */ }
+
+#content-wrapper.hidden {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden; }
+
+.content {
+  position: absolute;
+  top: 0;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  border: 2px #ddd solid;
+  box-shadow: -1px -1px 5px #ddd;
+  padding: 20px;
+  text-align: left;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .content .close {
+    position: absolute;
+    font-size: 32px;
+    top: 5px;
+    left: 600px;
+    color: #aaa; }
+  .content .close:hover {
+    color: #444;
+    cursor: pointer; }
+  .content h1 {
+    font-size: 32px;
+    color: #ff088d; }
+  .content .desc {
+    font-size: 16px;
+    font-weight: normal;
+    color: #222; }
+
+.content.top {
+  transform: rotate(-1deg);
+  transform-origin: 50% 50%;
+  -ms-transform: rotate(-1deg);
+  /* IE 9 */
+  -ms-transform-origin: 50% 50%;
+  /* IE 9 */
+  -webkit-transform: rotate(-1deg);
+  /* Safari and Chrome */
+  -webkit-transform-origin: 50% 50%;
+  /* Safari and Chrome */
+  z-index: 1000; }
+
+.content.bottom {
+  transform: rotate(1deg);
+  transform-origin: 50% 50%;
+  -ms-transform: rotate(1deg);
+  /* IE 9 */
+  -ms-transform-origin: 50% 50%;
+  /* IE 9 */
+  -webkit-transform: rotate(1deg);
+  /* Safari and Chrome */
+  -webkit-transform-origin: 50% 50%;
+  /* Safari and Chrome */ }
+
+svg {
+  position: absolute !important;
+  left: 0; }
