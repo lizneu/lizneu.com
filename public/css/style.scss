@@ -4,6 +4,7 @@ $font-family: 'Oswald', sans-serif;
 $handwriting: 'Shadows Into Light Two', cursive; 
 
 $pink: #FF088D; 
+$blue: #0995E0;
 
 @mixin transition($transition) {
   -webkit-transition: $transition;
@@ -178,7 +179,7 @@ body {
 #content-wrapper {
   position: relative;
   height: 600px;
-  width: 600px;
+  width: 580px;
   top: 75px;
   left: 600px;
   @include transition(all 0.5s);
@@ -202,6 +203,7 @@ body {
   border: 2px #ddd solid;
   box-shadow: -1px -1px 5px #ddd;
   padding: 20px; 
+  padding-left: 40px;         
   text-align: left;
   height: 100%;
   width: 100%;
@@ -226,10 +228,32 @@ body {
   }
 
   .desc {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     color: #222;
+    margin-right: 25px;
+    margin-top: 40px;
+
+    .project, .project > a {
+      color: #666;
+      border: none;
+    }
+
+    .project > a:hover {
+      color: $pink;
+    }
   }
+
+  a {
+    text-decoration: none;
+    color: $blue;
+    border-bottom: 1px dashed #bbb; 
+  }
+
+  a:hover {
+    color: $pink;
+  }
+
 }
 
 .content.top {
@@ -239,6 +263,14 @@ body {
 
 .content.bottom {
   @include rotate(1deg, 50% 50%);
+}
+
+#myface {
+  float: right;
+  margin: -10px 0 0 15px;
+  width: 240px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #ababab;
 }
 
 svg {

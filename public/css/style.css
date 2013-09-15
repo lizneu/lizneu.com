@@ -128,7 +128,7 @@ body {
 #content-wrapper {
   position: relative;
   height: 600px;
-  width: 600px;
+  width: 580px;
   top: 75px;
   left: 600px;
   -webkit-transition: all 0.5s;
@@ -156,6 +156,7 @@ body {
   border: 2px #ddd solid;
   box-shadow: -1px -1px 5px #ddd;
   padding: 20px;
+  padding-left: 40px;
   text-align: left;
   height: 100%;
   width: 100%;
@@ -176,9 +177,22 @@ body {
     font-size: 32px;
     color: #ff088d; }
   .content .desc {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
-    color: #222; }
+    color: #222;
+    margin-right: 25px;
+    margin-top: 40px; }
+    .content .desc .project, .content .desc .project > a {
+      color: #666;
+      border: none; }
+    .content .desc .project > a:hover {
+      color: #ff088d; }
+  .content a {
+    text-decoration: none;
+    color: #0995e0;
+    border-bottom: 1px dashed #bbb; }
+  .content a:hover {
+    color: #ff088d; }
 
 .content.top {
   transform: rotate(-1deg);
@@ -204,6 +218,13 @@ body {
   /* Safari and Chrome */
   -webkit-transform-origin: 50% 50%;
   /* Safari and Chrome */ }
+
+#myface {
+  float: right;
+  margin: -10px 0 0 15px;
+  width: 240px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #ababab; }
 
 svg {
   position: absolute !important;
