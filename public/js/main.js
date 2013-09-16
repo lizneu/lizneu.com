@@ -62,9 +62,9 @@ function surprise() {
 				iDot.animate({'y': -1000, 'transform': 's1.0'}, 900, 'easeOut', function() {
 					iDot.animate({'y': 138.5}, 1200, 'bounce', function() {
 						beingSurprising = false;
-						paper.remove();
 						$("#iChar").removeClass("surprise");
 						$(".link2, .char2").removeClass("hidden");
+						paper.remove();
 					});
 				});
 			});

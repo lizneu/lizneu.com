@@ -21,7 +21,7 @@ body {
   float: left;
   text-align: right;
   position: relative; }
-  #firstname #iChar.surprise {
+  #firstname #iChar {
     position: relative; }
   #firstname .char {
     float: right;
@@ -53,7 +53,7 @@ body {
       /* Safari and Chrome */ }
     #firstname .char .link2 {
       top: 25%;
-      left: 42%; }
+      left: 32%; }
     #firstname .char .link3 {
       top: 71.5%;
       left: 65%; }
